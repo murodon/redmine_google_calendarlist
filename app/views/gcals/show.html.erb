@@ -19,7 +19,12 @@
 <% unless @gcal.description.blank? %>
   <p><strong><%=l(:field_description)%></strong></p>
   <div class="wiki">
-    <%= raw @gcal.description %>
+     <div class="cal_wrapper">
+       <div class="googlecal">
+          <iframe src="https://www.google.com/calendar/<%= raw @gcal.description %>" style="border: 0" frameborder="0" scrolling="no">
+          </iframe>
+        </div><!--end of .googlecal-->
+      </div><!--end of .cal_wrapper-->
   </div>
 <% end %>
 

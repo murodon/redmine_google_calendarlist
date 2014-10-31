@@ -28,7 +28,8 @@
      <%= link_to gcal.subject, project_gcal_path(@project, gcal.id) %><br>
      <div class="cal_wrapper">
        <div class="googlecal">
-          <%= raw gcal.description %>
+          <iframe src="https://www.google.com/calendar/<%= raw gcal.description %>" style="border: 0" frameborder="0" scrolling="no">
+          </iframe>
         </div><!--end of .googlecal-->
       </div><!--end of .cal_wrapper-->
   </td>
