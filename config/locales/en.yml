@@ -1,0 +1,9 @@
+en:
+  label_google_calendarlist: Google Calendar
+  project_module_google_calendarlist: Google Calendar plugin
+  permission_view_gcals: View sample data
+  permission_manage_gcals: Manage sample data
+
+  label_gcals_new: New sample data
+  label_gcal: Sample data
+

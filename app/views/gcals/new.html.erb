@@ -1,0 +1,6 @@
+<%= labelled_form_for :gcal, @gcal,
+                  :url => project_gcals_path(@project) do |f| %>
+    <%= render :partial => 'gcals/form', :locals => {:form => f} %>
+    <%= f.submit l(:button_create) %>
+<% end %>
+

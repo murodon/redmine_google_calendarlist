@@ -1,0 +1,42 @@
+<% content_for :header_tags do %>
+<%= stylesheet_link_tag 'gcal', :plugin => 'redmine_google_calendarlist' %>
+<% end %>
+
+<div class="contextual">
+  <%= link_to_if_authorized(l(:label_gcals_new), 
+                            {:action => 'new', :project_id => @project}, 
+                            :class => 'icon icon-add') %>
+</div>
+
+<h2> <%=h l :label_google_calendarlist %> </h2>
+
+<% if (@gcals.blank?) %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+
+<table class="list">
+
+<thead><tr>  
+<th>#</th> <th><%=h l(:field_subject) %></th>
+</tr></thead>
+
+<tbody>
+<% @gcals.each do |gcal| %>
+  <tr class="<%= cycle('odd', 'even') %>">
+  <td><%= gcal.id %></td>
+  <td>
+     <%= link_to gcal.subject, project_gcal_path(@project, gcal.id) %><br>
+     <div class="cal_wrapper">
+       <div class="googlecal">
+          <%= raw gcal.description %>
+        </div><!--end of .googlecal-->
+      </div><!--end of .cal_wrapper-->
+  </td>
+</tr>
+<% end %>
+</tbody>
+
+</table>
+
+<% end %>
+

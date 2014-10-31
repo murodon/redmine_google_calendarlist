@@ -1,0 +1,26 @@
+<div class="contextual">
+<%= link_to_if_authorized(l(:button_edit),
+                          {:action => 'edit', :project_id => @project, :id => @gcal.id},
+              :class => 'icon icon-edit') %>
+<%= link_to_if_authorized(l(:button_delete),
+                          {:action => 'destroy', :project_id => @project, :id => @gcal.id},
+               :confirm => l(:text_are_you_sure), :method => :delete,
+               :class => 'icon icon-del') %>
+</div>
+
+<h2><%=h l(:label_gcal) %>#<%= @gcal.id %></h2>
+
+<div class="issue">      
+
+  <div class="subject">
+    <h3><%= @gcal.subject %></h3>
+  </div>
+
+<% unless @gcal.description.blank? %>
+  <p><strong><%=l(:field_description)%></strong></p>
+  <div class="wiki">
+    <%= raw @gcal.description %>
+  </div>
+<% end %>
+
+</div>

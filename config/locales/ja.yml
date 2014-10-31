@@ -1,0 +1,10 @@
+ja:
+  label_google_calendarlist: Google Calendar List
+  project_module_google_calendarlist: Google Calendar プラグイン
+  permission_view_gcals: カレンダーデータの閲覧
+  permission_manage_gcals: カレンダーデータの管理
+
+  label_gcals_new: 新しいカレンダーデータ
+  label_gcal: カレンダーデータ
+
+
